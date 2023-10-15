@@ -24,19 +24,8 @@ public partial class Card : ContentView
         }
     }
 
-    private void Testing()
-    {
-        IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.105"), 85);
-        Socket esp = new Socket(SocketType.Stream, ProtocolType.Tcp);
-        esp.Connect(iPEndPoint);
-        var testa = System.Text.Encoding.UTF8.GetBytes("Prueba");
-        esp.Send(testa);
-        esp.Disconnect(true);
-    }
-
     private void OnStatusButtonClicked(object sender, EventArgs e)
     {
-        Testing();
         //We check if the status in on or off to set the colors
         if(status == 0) 
         {
