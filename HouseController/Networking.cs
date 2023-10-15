@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-
+using System.Text.Json.Nodes;
+using Newtonsoft.Json;
 
 namespace Networking
 {
@@ -34,16 +34,45 @@ namespace Networking
             return new IPEndPoint(IPAddress.Parse(Ip), Port);
         }
         /// <summary>
+        /// Converts a string to bytes for send a string with the socket
+        /// </summary>
+        /// <param name="message">Message to convert</param>
+        /// <returns>The Message in bytes</returns>
+        private static byte[] CreateMessage(string message)
+        {
+            return Encoding.UTF8.GetBytes(message);
+        }
+
+        private static string DecodeMessage(byte[] message)
+        {
+            return Encoding.UTF8.GetString(message);
+        }
+        /// <summary>
         /// Returns true if the connection was succesfully established
         /// </summary>
         /// <param name="iPEndPoint">EndPoint containing the ip and the port</param>
         /// <param name="socket">Socket to make the connection with</param>
-        public static void StartConnection(IPEndPoint iPEndPoint, Socket socket)
+        public static bool StartConnection(IPEndPoint iPEndPoint, Socket socket)
         {
             socket.Connect(iPEndPoint);
-            var testa = System.Text.Encoding.UTF8.GetBytes("Prueba");
-            socket.Send(testa);
-            socket.Disconnect(true);
+            byte[] testMessage = CreateMessage("Prueba");
+            socket.Send(testMessage);
+            byte[] receivedMessage = new byte[4];
+            socket.Receive(receivedMessage);
+            //We check if the message we sent is the same that arrived to the esp8266
+            if(testMessage == receivedMessage)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static JsonObject GetData(Socket socket)
+        {
+            byte[] data = new byte[128];
+            socket.Receive(data);
+
+            return JsonConvert.DeserializeObject(DecodeMessage(data)) as JsonObject;
         }
     }
 }

@@ -53,6 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Json.Net" Version="1.0.33" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="SocketIOClient" Version="3.1.1" />
 	</ItemGroup>

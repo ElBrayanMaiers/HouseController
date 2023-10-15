@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nTfCE4UxJXOGDpmEhEF13rYTTITFWSbo4WgczaPsYsnK5LyDUX8vFKQvs+Fi9sYLj8yd4Tg5RxUdQ9wC07F4qQ==",
+  "dgSpecHash": "Mof3viSrAk02KOuKjJkKy2GrEmFj9Hjfi2+zY1U+WwFcVFDerO77lYtaqXn/QAXXmloClXH6u/4J8NqgGf/lyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Broogel\\Source\\Repos\\HouseController\\HouseController\\HouseController.csproj",
+  "projectFilePath": "C:\\Users\\Broogel\\source\\repos\\HouseController\\HouseController\\HouseController.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Broogel\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
@@ -21,6 +22,7 @@
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.221209.1\\microsoft.windowsappsdk.1.2.221209.1.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
