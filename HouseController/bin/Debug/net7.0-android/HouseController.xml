@@ -4,5 +4,37 @@
         <name>HouseController</name>
     </assembly>
     <members>
+        <member name="T:Networking.ESPSocket">
+            <summary>
+            All the neccesary methods for make the connections and receive the data from the ESP8266
+            </summary>
+        </member>
+        <member name="M:Networking.ESPSocket.StartConnection">
+            <summary>
+            Create a connection with the ip and check if the data is sent correctly
+            </summary>
+            <returns>Returns true if the connection was succesfully established</returns>
+        </member>
+        <member name="M:Networking.ESPSocket.SendData(System.String)">
+            <summary>
+            Sends data to the socket and returns if the data arrived succesfully
+            </summary>
+            <param name="Data">Data to send</param>
+            <returns>Returns  the data if was  sent correctly or null if the data wasnt send correctly</returns>
+        </member>
+        <member name="M:ExtensionMethods.MyExtensions.EncodeMessage(System.String)">
+            <summary>
+            Converts a string to bytes for send a string with the socket
+            </summary>
+            <param name="message">Message to convert</param>
+            <returns>The Message in bytes</returns>
+        </member>
+        <member name="M:ExtensionMethods.MyExtensions.DecodeMessage(System.Byte[])">
+            <summary>
+            Converts bytes to a string to read a data received from the socket
+            </summary>
+            <param name="message">Data in bytes</param>
+            <returns>The message in String</returns>
+        </member>
     </members>
 </doc>

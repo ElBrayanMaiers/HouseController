@@ -976,3 +976,5 @@ C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-a
 C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-android\android\assets\SocketIO.Serializer.Core.dll
 C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-android\android\assets\SocketIO.Serializer.SystemTextJson.dll
 C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-android\android\assets\SocketIOClient.dll
+C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-android\android\assets\Json.Net.dll
+C:\Users\Broogel\source\repos\HouseController\HouseController\obj\Debug\net7.0-android\android\assets\Newtonsoft.Json.dll
