@@ -5,7 +5,6 @@
     <ContentView.Content>
         <VerticalStackLayout WidthRequest="200" HeightRequest="160" BackgroundColor="Gray">
             <Label
-                AutomationId="DeviceName"
                 Text="Termotanque"
                 FontSize="20"
                 HorizontalTextAlignment="Center">

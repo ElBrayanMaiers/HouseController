@@ -19,10 +19,12 @@ namespace Networking
         private IPEndPoint iPEndPoint;
         public ESPSocket(string ip, int port)
         {
+            //We create an endpoint with the params ip and port and we create the socket in TCP mode
             iPEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
             socket = new Socket(iPEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         }
 
+        //Class for the JSON object of the data that is received to get the actual status of the ESP
         public class ESPInitialData
         {
             public string name { get; set; }
@@ -34,12 +36,13 @@ namespace Networking
         /// <summary>
         /// Create a connection with the ip
         /// </summary>
-        /// <returns>Returns the message received</returns>
-        public async Task<string> StartConnection()
+        /// <returns>Returns a status of the devices</returns>
+        public async Task<List<ESPSocket.ESPInitialData>> StartConnection()
         {
             socket.Connect(iPEndPoint);
+            //Delay to be sure that all the ESP status data is received
             await Task.Delay(500);
-            return GetData().ToString();
+            return GetStatusJSON();
         }
 
         /// <summary>
@@ -60,13 +63,15 @@ namespace Networking
             }
             return  null;
         }
-
-        public ESPInitialData[] GetData()
+        /// <summary>
+        /// Get the actual status of the devices
+        /// </summary>
+        /// <returns>ESPInitial array object containing the status data of devices from the JSON received from the ESP</returns>
+        public List<ESPInitialData> GetStatusJSON()
         {
             byte[] data = new byte[500];
             socket.Receive(data);
-
-            return JsonConvert.DeserializeObject<ESPInitialData[]>(data.DecodeMessage());
+            return JsonConvert.DeserializeObject<List<ESPInitialData>>(data.DecodeMessage());
         }
     }
 }

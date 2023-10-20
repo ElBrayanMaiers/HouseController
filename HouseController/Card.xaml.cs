@@ -9,15 +9,11 @@ namespace CusComponent;
 public partial class Card : ContentView
 {
     private int status;
-    private Color Red, Green;
-    private ESPSocket socket;
-    private string Ip = "192.168.0.105";
-    private int Port = 85;
+    private readonly Color Red, Green;
+    public static readonly BindableProperty DeviceNameProperty = BindableProperty.Create(nameof(DeviceName), typeof(string), typeof(Card), string.Empty);
+    public string DeviceName {  get; set; }
     public Card()
 	{
-        socket = new ESPSocket(Ip, Port);
-        InitializeESP();
-        statusButton.BackgroundColor = Color.FromRgba("fff");
         InitializeComponent();
         if(Application.Current.Resources.TryGetValue("Green", out var green))
         {
@@ -28,23 +24,9 @@ public partial class Card : ContentView
             Red = (Color)red;
         }
     }
-
-    private async void InitializeESP()
-    {
-        await socket.StartConnection();
-    }
-
     private void OnStatusButtonClicked(object sender, EventArgs e)
     {
-        //We check if the status in on or off to set the colors
-        if(status == 0) 
-        {
-            statusButton.BackgroundColor = Green;
-        }
-        else
-        {
-            statusButton.BackgroundColor = Red;
-        }
+        
     }
 
     private int curtimerow = 0;

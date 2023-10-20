@@ -11,9 +11,9 @@
         </member>
         <member name="M:Networking.ESPSocket.StartConnection">
             <summary>
-            Create a connection with the ip and check if the data is sent correctly
+            Create a connection with the ip
             </summary>
-            <returns>Returns true if the connection was succesfully established</returns>
+            <returns>Returns the message received</returns>
         </member>
         <member name="M:Networking.ESPSocket.SendData(System.String)">
             <summary>
