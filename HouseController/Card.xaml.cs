@@ -16,7 +16,7 @@ public partial class Card : ContentView
     public Card()
 	{
         socket = new ESPSocket(Ip, Port);
-        bool asd = socket.StartConnection();
+        InitializeESP();
         statusButton.BackgroundColor = Color.FromRgba("fff");
         InitializeComponent();
         if(Application.Current.Resources.TryGetValue("Green", out var green))
@@ -27,6 +27,11 @@ public partial class Card : ContentView
         {
             Red = (Color)red;
         }
+    }
+
+    private async void InitializeESP()
+    {
+        await socket.StartConnection();
     }
 
     private void OnStatusButtonClicked(object sender, EventArgs e)

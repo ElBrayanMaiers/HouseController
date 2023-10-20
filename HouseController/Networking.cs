@@ -35,12 +35,10 @@ namespace Networking
         /// Create a connection with the ip
         /// </summary>
         /// <returns>Returns the message received</returns>
-        public string StartConnection()
+        public async Task<string> StartConnection()
         {
             socket.Connect(iPEndPoint);
-            byte[] message = "Prueba".EncodeMessage();
-            socket.Send(message);
-            byte[] receivedMessage = new byte[4];
+            await Task.Delay(500);
             return GetData().ToString();
         }
 
