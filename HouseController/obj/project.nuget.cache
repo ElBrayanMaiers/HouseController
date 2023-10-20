@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mof3viSrAk02KOuKjJkKy2GrEmFj9Hjfi2+zY1U+WwFcVFDerO77lYtaqXn/QAXXmloClXH6u/4J8NqgGf/lyg==",
+  "dgSpecHash": "ZmjfSAOx1k6BxO9XTJBXmCecTBGF4Dozx6+nh2C7/FiUNRr0xz42E3Z35owBMjyuzVIShzSX0gF4cArZ6k8+3g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Broogel\\source\\repos\\HouseController\\HouseController\\HouseController.csproj",
   "expectedPackageFiles": [
@@ -16,8 +16,8 @@
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.graphics.win2d\\1.0.5.1\\microsoft.graphics.win2d.1.0.5.1.nupkg.sha512",
-    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.maui.graphics\\7.0.96\\microsoft.maui.graphics.7.0.96.nupkg.sha512",
-    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.96\\microsoft.maui.graphics.win2d.winui.desktop.7.0.96.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.maui.graphics\\7.0.92\\microsoft.maui.graphics.7.0.92.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.92\\microsoft.maui.graphics.win2d.winui.desktop.7.0.92.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
@@ -119,9 +119,9 @@
     "C:\\Users\\Broogel\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.4.1\\xamarin.kotlinx.coroutines.android.1.6.4.1.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
     "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.29\\microsoft.windows.sdk.net.ref.10.0.19041.29.nupkg.sha512",
-    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.12\\microsoft.aspnetcore.app.runtime.win-x64.7.0.12.nupkg.sha512",
-    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.12\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.12.nupkg.sha512",
-    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.12\\microsoft.netcore.app.runtime.win-x64.7.0.12.nupkg.sha512"
+    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.11\\microsoft.aspnetcore.app.runtime.win-x64.7.0.11.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.11\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.11.nupkg.sha512",
+    "C:\\Users\\Broogel\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.11\\microsoft.netcore.app.runtime.win-x64.7.0.11.nupkg.sha512"
   ],
   "logs": []
 }

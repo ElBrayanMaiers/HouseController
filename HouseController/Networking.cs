@@ -23,17 +23,12 @@ namespace Networking
             socket = new Socket(iPEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         }
 
-        public class ESPMessage
+        public class ESPInitialData
         {
-            public string Device { get; set; }
-            public string Action { get; set; }
-            public string Message { get; set; }
-            public ESPMessage(string Device, string Action, string Message)
-            {
-                this.Device = Device;
-                this.Action = Action;
-                this.Message = Message;
-            }
+            public string name { get; set; }
+            public int status { get; set; }
+            public string[] times { get; set; }
+            public string[] timesStatus { get; set; }
         }
 
         /// <summary>
@@ -64,7 +59,7 @@ namespace Networking
         {
             byte[] dataBytes = Data.EncodeMessage();
             socket.Send(dataBytes);
-            byte[] receivedData = new byte[32];
+            byte[] receivedData = new byte[500];
             socket.Receive(receivedData);
             
             if(dataBytes == receivedData)
@@ -74,12 +69,12 @@ namespace Networking
             return  null;
         }
 
-        public JsonObject GetData()
+        public ESPInitialData[] GetData()
         {
-            byte[] data = new byte[128];
+            byte[] data = new byte[500];
             socket.Receive(data);
 
-            return JsonConvert.DeserializeObject(data.DecodeMessage()) as JsonObject;
+            return JsonConvert.DeserializeObject<ESPInitialData[]>(data.DecodeMessage());
         }
     }
 }
