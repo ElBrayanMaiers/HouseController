@@ -43,12 +43,12 @@ namespace Networking
         public bool StartConnection()
         {
             socket.Connect(iPEndPoint);
-            byte[] testMessage = "Prueba".EncodeMessage();
-            socket.Send(testMessage);
+            byte[] message = "Prueba".EncodeMessage();
+            socket.Send(message);
             byte[] receivedMessage = new byte[4];
             socket.Receive(receivedMessage);
             //We check if the message we sent is the same that arrived to the esp8266
-            if(testMessage == receivedMessage)
+            if(message == receivedMessage)
             {
                 return true;
             }
