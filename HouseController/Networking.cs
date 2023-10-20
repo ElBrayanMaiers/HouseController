@@ -32,22 +32,16 @@ namespace Networking
         }
 
         /// <summary>
-        /// Create a connection with the ip and check if the data is sent correctly
+        /// Create a connection with the ip
         /// </summary>
-        /// <returns>Returns true if the connection was succesfully established</returns>
-        public bool StartConnection()
+        /// <returns>Returns the message received</returns>
+        public string StartConnection()
         {
             socket.Connect(iPEndPoint);
             byte[] message = "Prueba".EncodeMessage();
             socket.Send(message);
             byte[] receivedMessage = new byte[4];
-            socket.Receive(receivedMessage);
-            //We check if the message we sent is the same that arrived to the esp8266
-            if(message == receivedMessage)
-            {
-                return true;
-            }
-            return false;
+            return GetData().ToString();
         }
 
         /// <summary>
