@@ -2,17 +2,22 @@ using HouseController;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using Networking;
 
 namespace CusComponent;
 
 public partial class Card : ContentView
 {
-    private int curtimerow = 0;
-    private int curtimecolumn = 0;
-    private int status = 1;
+    private int status;
     private Color Red, Green;
+    private ESPSocket socket;
+    private string Ip = "192.168.0.105";
+    private int Port = 85;
     public Card()
 	{
+        socket = new ESPSocket(Ip, Port);
+        bool asd = socket.StartConnection();
+        statusButton.BackgroundColor = Color.FromRgba("fff");
         InitializeComponent();
         if(Application.Current.Resources.TryGetValue("Green", out var green))
         {
@@ -24,19 +29,8 @@ public partial class Card : ContentView
         }
     }
 
-    private void Testing()
-    {
-        IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.105"), 85);
-        Socket esp = new Socket(SocketType.Stream, ProtocolType.Tcp);
-        esp.Connect(iPEndPoint);
-        var testa = System.Text.Encoding.UTF8.GetBytes("Prueba");
-        esp.Send(testa);
-        esp.Disconnect(true);
-    }
-
     private void OnStatusButtonClicked(object sender, EventArgs e)
     {
-        Testing();
         //We check if the status in on or off to set the colors
         if(status == 0) 
         {
@@ -47,6 +41,9 @@ public partial class Card : ContentView
             statusButton.BackgroundColor = Red;
         }
     }
+
+    private int curtimerow = 0;
+    private int curtimecolumn = 0;
     private void OnTimeAdded(object sender, EventArgs e)
     {
         //We set the position in the grid of the times that we add
