@@ -4,16 +4,28 @@
         <name>HouseController</name>
     </assembly>
     <members>
+        <member name="M:HouseController.Pages.ConnectPage.GetAllAvailableAddresses">
+            <summary>
+            Get all Addresses that are reachable on the local network
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HouseController.Pages.ConnectPage.CheckEsp(System.String,System.Int32)">
+            <summary>
+            Check if the device in a ip is an ESP HouseController Device
+            </summary>
+            <param name="ip">Ip to check</param>
+            <returns>Ip if its an EspDevice, null if its not</returns>
+        </member>
         <member name="T:Networking.ESPSocket">
             <summary>
             All the neccesary methods for make the connections and receive the data from the ESP8266
             </summary>
         </member>
-        <member name="M:Networking.ESPSocket.StartConnection">
+        <member name="M:Networking.ESPSocket.StartConnectionAsync">
             <summary>
-            Create a connection with the ip
+            Create a connection with the server
             </summary>
-            <returns>Returns the message received</returns>
         </member>
         <member name="M:Networking.ESPSocket.SendData(System.String)">
             <summary>
@@ -22,6 +34,12 @@
             <param name="Data">Data to send</param>
             <returns>Returns  the data if was  sent correctly or null if the data wasnt send correctly</returns>
         </member>
+        <member name="M:Networking.ESPSocket.GetStatusJSON">
+            <summary>
+            Get the actual status of the devices
+            </summary>
+            <returns>ESPInitial array object containing the status data of devices from the JSON received from the ESP</returns>
+        </member>
         <member name="M:ExtensionMethods.MyExtensions.EncodeMessage(System.String)">
             <summary>
             Converts a string to bytes for send a string with the socket
@@ -29,7 +47,7 @@
             <param name="message">Message to convert</param>
             <returns>The Message in bytes</returns>
         </member>
-        <member name="M:ExtensionMethods.MyExtensions.DecodeMessage(System.Byte[])">
+        <member name="M:ExtensionMethods.MyExtensions.DecodeMessage(System.Byte[],System.Int32)">
             <summary>
             Converts bytes to a string to read a data received from the socket
             </summary>

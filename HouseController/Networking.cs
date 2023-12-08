@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using Newtonsoft.Json;
 using ExtensionMethods;
+using System.Diagnostics;
 
 namespace Networking
 {
@@ -34,15 +35,16 @@ namespace Networking
         }
 
         /// <summary>
-        /// Create a connection with the ip
+        /// Create a connection with the server
         /// </summary>
-        /// <returns>Returns a status of the devices</returns>
-        public async Task<List<ESPSocket.ESPInitialData>> StartConnection()
+        public Task StartConnectionAsync()
         {
-            socket.Connect(iPEndPoint);
-            //Delay to be sure that all the ESP status data is received
-            await Task.Delay(500);
-            return GetStatusJSON();
+            return socket.ConnectAsync(iPEndPoint);
+        }
+
+        public void CloseConnection()
+        {
+            socket.Close();
         }
 
         /// <summary>
@@ -50,28 +52,29 @@ namespace Networking
         /// </summary>
         /// <param name="Data">Data to send</param>
         /// <returns>Returns  the data if was  sent correctly or null if the data wasnt send correctly</returns>
-        public string SendData(string Data)
+        public async Task<string> SendDataAsync(string Data, int byteSize, bool waitForAnswer = true)
         {
             byte[] dataBytes = Data.EncodeMessage();
-            socket.Send(dataBytes);
-            byte[] receivedData = new byte[500];
-            socket.Receive(receivedData);
-            
-            if(dataBytes == receivedData)
+            await socket.SendAsync(dataBytes);
+            if (waitForAnswer)
             {
-                return receivedData.DecodeMessage();
+                Task.Delay(300).Wait();
+                var receivedData = new byte[byteSize];
+                var buffer = await socket.ReceiveAsync(receivedData);
+                return receivedData.DecodeMessage(buffer);
             }
-            return  null;
+            return null;
         }
+
         /// <summary>
-        /// Get the actual status of the devices
+        /// Get the information of all devices connected on the ESP
         /// </summary>
-        /// <returns>ESPInitial array object containing the status data of devices from the JSON received from the ESP</returns>
-        public List<ESPInitialData> GetStatusJSON()
+        /// <returns>ESPInitial array object containing the data of the devices from the JSON received from the ESP</returns>
+        public async Task<List<ESPInitialData>> GetDevicesData()
         {
-            byte[] data = new byte[500];
-            socket.Receive(data);
-            return JsonConvert.DeserializeObject<List<ESPInitialData>>(data.DecodeMessage());
+            var jsonString = await SendDataAsync("InDt", 2048);
+            var jsonObject = JsonConvert.DeserializeObject<List<ESPInitialData>>(jsonString);
+            return jsonObject;
         }
     }
 }
@@ -95,9 +98,11 @@ namespace ExtensionMethods
         /// </summary>
         /// <param name="message">Data in bytes</param>
         /// <returns>The message in String</returns>
-        public static string DecodeMessage(this byte[] message)
+        public static string DecodeMessage(this byte[] message, int buffer)
         {
-            return Encoding.UTF8.GetString(message);
+            //Get the string from the first element until the length of the data less 1 cause of the intial element 0
+            //We delete possible whitespaces with Trim method
+            return Encoding.UTF8.GetString(message, 0, buffer).Trim();
         }
     }
 }

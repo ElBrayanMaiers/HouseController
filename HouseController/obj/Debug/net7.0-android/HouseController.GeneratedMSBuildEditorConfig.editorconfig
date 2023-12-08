@@ -26,17 +26,29 @@ build_metadata.AdditionalFiles.ManifestResourceName = HouseController.AppShell.x
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Broogel/source/repos/HouseController/HouseController/Card.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HouseController.Card.xaml
-build_metadata.AdditionalFiles.TargetPath = Card.xaml
-build_metadata.AdditionalFiles.RelativePath = Card.xaml
-
 [C:/Users/Broogel/source/repos/HouseController/HouseController/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HouseController.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Broogel/source/repos/HouseController/HouseController/Pages/CardView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HouseController.Pages.CardView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\CardView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\CardView.xaml
+
+[C:/Users/Broogel/source/repos/HouseController/HouseController/Pages/ConnectPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HouseController.Pages.ConnectPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ConnectPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ConnectPage.xaml
+
+[C:/Users/Broogel/source/repos/HouseController/HouseController/Pages/ControllerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HouseController.Pages.ControllerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ControllerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ControllerPage.xaml
 
 [C:/Users/Broogel/source/repos/HouseController/HouseController/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

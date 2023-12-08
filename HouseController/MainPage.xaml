@@ -4,19 +4,5 @@
              xmlns:sample="clr-namespace:CusComponent"
              x:Class="HouseController.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="80,0"
-            VerticalOptions="Center">
-            <ListView HeightRequest="400">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <sample:Card DeviceName=""></sample:Card>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </VerticalStackLayout>
-    </ScrollView>
-
+    <BoxView WidthRequest="20" HeightRequest="20" BackgroundColor="Blue"></BoxView>
 </ContentPage>

@@ -60,15 +60,29 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Card.xaml.cs">
-	    <DependentUpon>Card.xaml</DependentUpon>
+	  <Compile Update="Pages\CardView.xaml.cs">
+	    <DependentUpon>CardView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ControllerPage.xaml.cs">
+	    <DependentUpon>ControllerPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ConnectPage.xaml.cs">
+	    <DependentUpon>ConnectPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Card.xaml">
+	  <MauiXaml Update="Pages\CardView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ControllerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ConnectPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionHouseControllerHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarHouseControllerHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

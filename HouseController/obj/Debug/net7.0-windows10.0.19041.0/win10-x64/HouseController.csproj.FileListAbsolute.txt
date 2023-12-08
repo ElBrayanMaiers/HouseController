@@ -327,3 +327,5 @@ C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-w
 C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\SocketIO.Serializer.Core.dll
 C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\SocketIO.Serializer.SystemTextJson.dll
 C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\SocketIOClient.dll
+C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Json.Net.dll
+C:\Users\Broogel\source\repos\HouseController\HouseController\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
