@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CusComponents.Card">
+    <VerticalStackLayout x:Name="VerticalLayout" WidthRequest="200" HeightRequest="160" BackgroundColor="Gray">
+        <Label
+                Text="{Binding Name}"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                TextColor="White">
+        </Label>
+        <Label Text="BUENAS" FontSize="20" TextColor="White"></Label>
+        <ListView ItemsSource="{Binding TimeStatus}"></ListView>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                    x:Name="statusButton"
+                    Padding="5" 
+                    BackgroundColor="Green" 
+                    HeightRequest="70" 
+                    WidthRequest="96"
+                    CornerRadius="6"
+                    FontSize="Medium"
+                    Text="On"
+                    TextColor="White"/>
+            <AbsoluteLayout>
+                <Button 
+                            HeightRequest="70" 
+                            WidthRequest="96"
+                            CornerRadius="6"
+                            Text="1hs"
+                            FontSize="Medium"
+                            BackgroundColor="Blue"
+                            TextColor="White"
+                            Padding="0,0,25,0"/>
+                <ImageButton
+                    x:Name="Maina"
+                        AbsoluteLayout.LayoutBounds="70,23"
+                        Grid.Column="1"
+                        Source="config.png"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        >
+                </ImageButton>
+            </AbsoluteLayout>
+        </HorizontalStackLayout>
+        <!--<Grid x:Name="TimesGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>-->
+    </VerticalStackLayout>
+</ContentView>

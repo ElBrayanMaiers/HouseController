@@ -4,9 +4,9 @@
         <name>HouseController</name>
     </assembly>
     <members>
-        <member name="M:HouseController.Pages.ConnectPage.GetAllAvailableAddresses">
+        <member name="M:HouseController.Pages.ConnectPage.ScanForEsp">
             <summary>
-            Get all Addresses that are reachable on the local network
+            Get all Ips that are Esp
             </summary>
             <returns></returns>
         </member>
@@ -16,6 +16,12 @@
             </summary>
             <param name="ip">Ip to check</param>
             <returns>Ip if its an EspDevice, null if its not</returns>
+        </member>
+        <member name="M:HouseController.Pages.ConnectPage.GetAllAvailableAddresses">
+            <summary>
+            Get all Addresses that are reachable on the local network
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Networking.ESPSocket">
             <summary>
@@ -27,18 +33,18 @@
             Create a connection with the server
             </summary>
         </member>
-        <member name="M:Networking.ESPSocket.SendData(System.String)">
+        <member name="M:Networking.ESPSocket.SendDataAsync(System.String,System.Int32,System.Boolean)">
             <summary>
             Sends data to the socket and returns if the data arrived succesfully
             </summary>
             <param name="Data">Data to send</param>
             <returns>Returns  the data if was  sent correctly or null if the data wasnt send correctly</returns>
         </member>
-        <member name="M:Networking.ESPSocket.GetStatusJSON">
+        <member name="M:Networking.ESPSocket.GetDevicesData">
             <summary>
-            Get the actual status of the devices
+            Get the information of all devices connected on the ESP
             </summary>
-            <returns>ESPInitial array object containing the status data of devices from the JSON received from the ESP</returns>
+            <returns>ESPInitial array object containing the data of the devices from the JSON received from the ESP</returns>
         </member>
         <member name="M:ExtensionMethods.MyExtensions.EncodeMessage(System.String)">
             <summary>

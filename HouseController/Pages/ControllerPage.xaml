@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sample="clr-namespace:CusComponent"
+             xmlns:sample="clr-namespace:CusComponents"
              x:Class="HouseController.Pages.ControllerPage">
 
     <ScrollView>
@@ -9,13 +9,14 @@
             Spacing="25"
             Padding="80,0"
             VerticalOptions="Center">
-            <ListView HeightRequest="400">
+            <sample:Card x:Name="asdf" DeviceName="Termotanque" DeviceStatus="0"></sample:Card>
+            <!--<ListView HeightRequest="400">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <sample:Card DeviceName=""></sample:Card>
+                        <sample:Card DeviceName="Hola"></sample:Card>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </VerticalStackLayout>
     </ScrollView>
 

@@ -31,7 +31,7 @@
                             <ContentView>
                                 <Border WidthRequest="240" StrokeShape="RoundRectangle 20 20 20 20">
                                     <StackLayout HorizontalOptions="Center">
-                                        <Button Clicked="IpButton_Clicked" WidthRequest="240" HeightRequest="40" TextColor="Black"  Text="{Binding  }"></Button>
+                                        <Button Clicked="IpButton_Clicked" WidthRequest="240" HeightRequest="40" TextColor="Black"  Text="{Binding }"></Button>
                                     </StackLayout>
                                 </Border>
                             </ContentView>
@@ -40,6 +40,6 @@
                 </CollectionView>
             </StackLayout>
         </StackLayout>
-        <Button x:Name="Buta" Margin="10, 50, 10, 0" Text="Buscar Manualmente"></Button>
+        <Button Margin="10, 50, 10, 0" Text="Buscar Manualmente"></Button>
     </VerticalStackLayout>
 </ContentPage>

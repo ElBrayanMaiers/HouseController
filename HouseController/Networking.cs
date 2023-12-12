@@ -16,8 +16,8 @@ namespace Networking
     /// </summary>
     public class ESPSocket
     {
-        private Socket socket;
-        private IPEndPoint iPEndPoint;
+        private readonly Socket socket;
+        private readonly IPEndPoint iPEndPoint;
         public ESPSocket(string ip, int port)
         {
             //We create an endpoint with the params ip and port and we create the socket in TCP mode
@@ -26,12 +26,12 @@ namespace Networking
         }
 
         //Class for the JSON object of the data that is received to get the actual status of the ESP
-        public class ESPInitialData
+        public class EspInitialData
         {
-            public string name { get; set; }
-            public int status { get; set; }
-            public string[] times { get; set; }
-            public string[] timesStatus { get; set; }
+            public string Name { get; set; }
+            public int Status { get; set; }
+            public string[] Times { get; set; }
+            public string[] TimesStatus { get; set; }
         }
 
         /// <summary>
@@ -70,10 +70,10 @@ namespace Networking
         /// Get the information of all devices connected on the ESP
         /// </summary>
         /// <returns>ESPInitial array object containing the data of the devices from the JSON received from the ESP</returns>
-        public async Task<List<ESPInitialData>> GetDevicesData()
+        public async Task<List<EspInitialData>> GetDevicesData()
         {
             var jsonString = await SendDataAsync("InDt", 2048);
-            var jsonObject = JsonConvert.DeserializeObject<List<ESPInitialData>>(jsonString);
+            var jsonObject = JsonConvert.DeserializeObject<List<EspInitialData>>(jsonString);
             return jsonObject;
         }
     }

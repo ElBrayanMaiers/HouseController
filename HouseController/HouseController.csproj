@@ -60,7 +60,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\CardView.xaml.cs">
+	  <Compile Update="Views\CardView.xaml.cs">
 	    <DependentUpon>CardView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\ControllerPage.xaml.cs">
@@ -72,7 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\CardView.xaml">
+	  <MauiXaml Update="Views\CardView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ControllerPage.xaml">
